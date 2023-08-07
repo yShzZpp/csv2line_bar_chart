@@ -32,14 +32,11 @@ def plot_bar_chart(df, x_col, y_cols):
 
     plt.xlabel(x_col)
     plt.ylabel('waited days')
-    plt.title('Difference between Columns')
+    plt.title(f'Waited Days Difference between [ {x_col} ] and [ {", ".join(y_cols)} ]')
     plt.legend()
     plt.xticks(rotation=45)
 
     plt.gca().yaxis.set_major_formatter(FuncFormatter(format_date))  # 设置y轴标签显示日期格式
-
-    # 调整y轴刻度间隔
-    plt.yticks(plt.yticks()[0][::2])
 
     plt.tight_layout()
     plt.show()
